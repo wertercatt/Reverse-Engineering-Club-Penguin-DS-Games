@@ -1,0 +1,113 @@
+diff NTR-CY9Ev00-chunks/0000002f.lua NTR-CY9Pv00-chunks/0000002f.lua
+81,83d80
+<               L2_2("mazeDoors", 1)
+<               L2_2 = _util
+<               L2_2 = L2_2.SetVar
+85,108d81
+<               L2_2 = _util
+<               L2_2 = L2_2.GetVar
+<               L2_2 = L2_2("GiftShopItems")
+<               if L2_2 ~= 4 then
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetVar
+<                 L2_2("GiftShopItems", 0)
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetExitLocked
+<                 L2_2(_id.M8_UGDoortoBoiler, true)
+<                 L2_2 = _util
+<                 L2_2 = L2_2.AddObjective
+<                 L2_2(_text.M8_OBJ4)
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetNextRoom
+<                 L2_2(126)
+<               else
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetNextRoom
+<                 L2_2(127)
+<               end
+<               L2_2 = _util
+<               L2_2 = L2_2.SetVar
+<               L2_2("mazeDoors", 0)
+116c89
+<                   if _util.GetMinigameOutput1() == 1 then
+---
+>                   if _util.GetMinigameOutput1() == 1 and false == false then
+127,128d99
+<                   else
+<                     _util.SetNextRoom(80)
+diff NTR-CY9Ev00-chunks/0000007b.lua NTR-CY9Pv00-chunks/0000007b.lua
+82d81
+<       _util.PlaySFX(197)
+84a84,86
+>         if 0 + 1 == 60 then
+>           _util.PlaySFX(197)
+>         end
+diff NTR-CY9Ev00-chunks/00000093.lua NTR-CY9Pv00-chunks/00000093.lua
+65a66
+>             _util.SetCursorPos(442, 119)
+diff NTR-CY9Ev00-chunks/000000f3.lua NTR-CY9Pv00-chunks/000000f3.lua
+81,83d80
+<               L2_2("mazeDoors", 1)
+<               L2_2 = _util
+<               L2_2 = L2_2.SetVar
+85,108d81
+<               L2_2 = _util
+<               L2_2 = L2_2.GetVar
+<               L2_2 = L2_2("GiftShopItems")
+<               if L2_2 ~= 4 then
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetVar
+<                 L2_2("GiftShopItems", 0)
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetExitLocked
+<                 L2_2(_id.M8_UGDoortoBoiler, true)
+<                 L2_2 = _util
+<                 L2_2 = L2_2.AddObjective
+<                 L2_2(_text.M8_OBJ4)
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetNextRoom
+<                 L2_2(126)
+<               else
+<                 L2_2 = _util
+<                 L2_2 = L2_2.SetNextRoom
+<                 L2_2(127)
+<               end
+<               L2_2 = _util
+<               L2_2 = L2_2.SetVar
+<               L2_2("mazeDoors", 0)
+116c89
+<                   if _util.GetMinigameOutput1() == 1 then
+---
+>                   if _util.GetMinigameOutput1() == 1 and false == false then
+127,128d99
+<                   else
+<                     _util.SetNextRoom(80)
+diff NTR-CY9Ev00-chunks/000001e8.lua NTR-CY9Pv00-chunks/000001e8.lua
+112,114d111
+<         L5_5 = _util
+<         L5_5 = L5_5.SetVar
+<         L5_5("M6BlastSnow", 0)
+132,135d128
+<       _util.SetCursorPos(157, 72)
+<       repeat
+<         scriptWait()
+<       until not _util.IsAnimPlaying(_util.GetSelf())
+147a141,142
+>     L5_5 = scriptPlay
+>     L5_5(L4_4)
+149,160c144,145
+<     L5_5 = L5_5.GetVar
+<     L5_5 = L5_5("M6BlastSnow")
+<     if L5_5 == 0 then
+<       L5_5 = _util
+<       L5_5 = L5_5.SetVar
+<       L5_5("M5BlastSnow", 1)
+<       L5_5 = scriptPlay
+<       L5_5(L4_4)
+<       L5_5 = _util
+<       L5_5 = L5_5.SetVar
+<       L5_5("EscapedFromCave", 1)
+<     end
+---
+>     L5_5 = L5_5.SetVar
+>     L5_5("EscapedFromCave", 1)
