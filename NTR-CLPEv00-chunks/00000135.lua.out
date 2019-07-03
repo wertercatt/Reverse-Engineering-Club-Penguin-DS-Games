@@ -1,5 +1,0 @@
-if _util.GetReason() == _const.CREATED then
-end
-if _util.GetReason() == _const.TOUCHED and _util.GetVar("M4C2_deadWB") ~= 2 then
-  _util.AddMonologue(2491)
-end

@@ -1,9 +1,0 @@
-if _util.GetActiveMission() == 7 then
-  if _util.GetVar("M11_CornMaze3Intro") == 0 then
-    _util.SetVar("M11_MazeProg", 2)
-    _util.SetVar("M11_CornMaze1Intro", 1)
-  end
-  if _util.GetVar("M11_Maze3_LadderDown") == 1 then
-    _util.ChangeBaseAnim("MissionObjects/M11/ladderDown", _id.M11_CornMazeLadder)
-  end
-end

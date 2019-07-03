@@ -1,6 +1,0 @@
-if _util.GetReason() == _const.CREATED then
-end
-if _util.GetReason() == _const.TOUCHED then
-  _util.AddPlayerThought(_text.M11_SKI_A_2)
-  _util.SetVar("SawCornCob", 1)
-end

@@ -1,5 +1,0 @@
-if _util.GetReason() == _const.CREATED then
-end
-if _util.GetReason() == _const.TOUCHED and _util.GetVar("gotGear") == 0 then
-  _util.SetVar("gotGear", 1)
-end
