@@ -1,0 +1,17 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetConversationCount() == 1 then
+    _util.AddDialog(4397, _const.END_DIALOG, 0)
+  elseif (not _util.IsSuitcaseItemEquipped(_id.SuitCase_FancyPants) or not _util.IsSuitcaseItemEquipped(_id.SuitCase_FancyHat) or not _util.IsSuitcaseItemEquipped(_id.SuitCase_FancyTie)) and (not _util.IsSuitcaseItemEquipped(_id.SuitCase_FancyDress) or not _util.IsSuitcaseItemEquipped(_id.SuitCase_FancyHair) or not _util.IsSuitcaseItemEquipped(_id.SuitCase_FancyNecklace)) then
+    _util.AddLoopingConv(1384)
+    _util.AddLoopingOption(1385, 1388, _const.UPDATE_LOOP)
+    _util.AddLoopingOption(1386, 1389, _const.UPDATE_LOOP)
+    _util.AddLoopingOption(1387, -1, _const.CHANGE_DIALOG, 1)
+  elseif _util.GetVar("M3C1_tiedJetpack") == 1 then
+    _util.AddDialog(1390, _const.END_DIALOG, 0)
+    _util.SetExitLocked(_id.Doors_Town2Night, false)
+  else
+    _util.AddDialog(4512, _const.END_DIALOG, 0)
+  end
+end

@@ -1,0 +1,95 @@
+local L0_0, L1_1
+L0_0 = _util
+L0_0 = L0_0.GetReason
+L0_0 = L0_0()
+L1_1 = _const
+L1_1 = L1_1.CREATED
+if L0_0 == L1_1 then
+  L0_0 = _util
+  L0_0 = L0_0.AddInterest
+  L1_1 = _const
+  L1_1 = L1_1.ITEM_DROPPED
+  L0_0(L1_1)
+end
+L0_0 = _util
+L0_0 = L0_0.GetReason
+L0_0 = L0_0()
+L1_1 = _const
+L1_1 = L1_1.TOUCHED
+if L0_0 == L1_1 then
+  L0_0 = _util
+  L0_0 = L0_0.GetConversationCount
+  L0_0 = L0_0()
+  if L0_0 == 0 then
+    L1_1 = _util
+    L1_1 = L1_1.AddMonologue
+    L1_1(159, "DialogStrings", _const.CHANGE_DIALOG, 1)
+  elseif L0_0 == 1 then
+    L1_1 = _util
+    L1_1 = L1_1.AddMonologue
+    L1_1(160, "DialogStrings", _const.CHANGE_DIALOG, 2)
+  elseif L0_0 == 2 then
+    function L1_1()
+      _util.DisableInput()
+      _util.SwitchState("give", _util.GetSelf())
+      repeat
+        scriptWait()
+      until not _util.IsAnimPlaying(_util.GetSelf())
+      _util.SwitchState("grab", _util.GetSelf())
+      repeat
+        scriptWait()
+      until not _util.IsAnimPlaying(_util.GetSelf())
+      _util.EnableInput()
+      _util.SwitchState("", _util.GetSelf())
+      _util.AddItem(_id.M1C1_DotEmptyTubes)
+      _util.SetVar("M1C1_haveCard4", 1)
+      _util.AddInventoryItem(_id.M1C1_Card4)
+      repeat
+        scriptWait()
+      until _util.IsPopUpVisible() == false
+      _util.ActivateNpc(_util.GetSelf(), 90)
+    end
+    scriptPlay(L1_1)
+  elseif L0_0 == 3 then
+    L1_1 = _util
+    L1_1 = L1_1.AddMonologue
+    L1_1(164)
+  elseif L0_0 == 90 then
+    L1_1 = _util
+    L1_1 = L1_1.AddMonologue
+    L1_1(163, "DialogStrings", _const.CHANGE_DIALOG, 91)
+  elseif L0_0 == 91 then
+    function L1_1()
+      _util.StartMiniGame(_const.JIGSAW, 0)
+      repeat
+        scriptWait()
+      until _util.GetGameState() ~= _const.MISSION
+      repeat
+        scriptWait()
+      until _util.GetGameState() == _const.MISSION
+      if _util.GetMinigameOutput1() == 1 then
+        _util.RemoveInventoryItem(_id.M1C1_Card1)
+        _util.RemoveInventoryItem(_id.M1C1_Card2)
+        _util.RemoveInventoryItem(_id.M1C1_Card3)
+        _util.RemoveInventoryItem(_id.M1C1_Card4)
+        _util.AddInventoryItem(_id.M1C1_Map)
+        _util.SetVar("M1C1_haveMap", 1)
+        _util.SetSpawn(1, _id.M1C1_DotBarrel)
+        _util.SetExitLocked(_id.Doors_Dock2Beach, false)
+        _util.SetExitLocked(_id.Doors_Beach2Light, false)
+        _util.SetObjective(638)
+      end
+      _util.SetSpawn(0, _id.M1C1_DotEmptyTubes)
+      _util.DelItem(_id.M1C1_DotInnerTubes)
+    end
+    scriptPlay(L1_1)
+    _util.SetConversationCount(3)
+  end
+end
+L0_0 = _util
+L0_0 = L0_0.GetReason
+L0_0 = L0_0()
+L1_1 = _const
+L1_1 = L1_1.ITEM_DROPPED
+if L0_0 == L1_1 then
+end

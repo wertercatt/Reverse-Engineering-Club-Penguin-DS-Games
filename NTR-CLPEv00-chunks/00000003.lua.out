@@ -1,0 +1,31 @@
+if _util.GetReason() == _const.CREATED then
+  _util.AddInterest(_const.ITEM_DROPPED)
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetConversationCount() == 0 then
+    _util.AddLoopingConv(853)
+    _util.AddLoopingOption(855, 858, _const.UPDATE_LOOP)
+    _util.AddLoopingOption(856, 859, _const.CHANGE_DIALOG, 1)
+    _util.AddLoopingOption(857, -1, _const.CHANGE_DIALOG, 10)
+  elseif _util.GetConversationCount() == 10 then
+    _util.AddDialog(4671, _const.END_DIALOG, 0)
+  elseif _util.GetConversationCount() == 1 then
+    _util.AddConversation(859, -1, -1, _const.CHANGE_DIALOG, 2)
+  elseif _util.GetConversationCount() == 2 then
+    _util.AddLoopingConv(860)
+    _util.AddLoopingOption(861, 864, _const.CHANGE_DIALOG, 3)
+    _util.AddLoopingOption(862, 865, _const.UPDATE_LOOP)
+    _util.AddLoopingOption(863, -1, _const.CHANGE_DIALOG, 11)
+  elseif _util.GetConversationCount() == 11 then
+    _util.AddDialog(4798, _const.END_DIALOG, 0)
+  elseif _util.GetConversationCount() == 3 then
+    _util.AddConversation(864, 866, -1, _const.END_DIALOG, 0)
+  elseif _util.GetConversationCount() == 99 then
+    _util.AddDialog(868, _const.END_DIALOG, 0)
+  end
+end
+if _util.GetReason() == _const.ITEM_DROPPED and _util.GetSource() == _id.Inventory_Dossier then
+  _util.AddDialog(867, _const.CHANGE_DIALOG, 99)
+end
+if _util.GetReason() == _const.COLLIDED then
+end

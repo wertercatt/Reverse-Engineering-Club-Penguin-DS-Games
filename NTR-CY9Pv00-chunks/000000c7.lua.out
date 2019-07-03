@@ -1,0 +1,15 @@
+if _util.GetReason() == _const.CREATED then
+  _util.AddInterest(_const.COMBINE)
+end
+if _util.GetReason() == _const.DISABLED then
+  _util.AddPlayerThought(_text.M9_DISABLED_INVENTORY_TOUCH)
+end
+if _util.GetReason() == _const.TOUCHED then
+  _util.MarkObjComplete(_text.M9_OBJ_4)
+end
+if _util.GetReason() == _const.COMBINE and _util.GetSource() == _id.M9_HerbsPhone then
+  _util.RemoveInventoryItem(_id.M9_SpyCamera)
+  _util.RemoveInventoryItem(_id.M9_HerbsPhone)
+  _util.AddInventoryItem(_id.M9_SpyCameraPhone)
+  _util.SetCombinationSuccess(1)
+end

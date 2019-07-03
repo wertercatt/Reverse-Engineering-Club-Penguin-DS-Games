@@ -1,0 +1,103 @@
+if _util.GetReason() == _const.CREATED then
+  _util.AddInterest(_const.COMMUNICATOR)
+  _util.AddInterest(_const.AFTER_DIALOG)
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetConversationCount() == 0 and _util.GetVar("GoTalkToRookie") == 0 then
+    _util.AddNPCText(_text.M11_GS_JPG_GREET)
+  elseif _util.GetConversationCount() == 0 and _util.GetVar("GoTalkToRookie") == 1 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop2", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_1)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_1A, _const.CHANGE_DIALOG, -1, 1)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_1B, _const.CHANGE_DIALOG, -1, 2)
+  elseif _util.GetConversationCount() == 1 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop", _id.M11_RookieGiftShop)
+    _util.ActivateNpc(_util.GetSelf(), 100)
+  elseif _util.GetConversationCount() == 100 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_2A)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_2, _const.CHANGE_DIALOG, -1, 3)
+  elseif _util.GetConversationCount() == 2 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_2B)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_2, _const.CHANGE_DIALOG, -1, 3)
+  elseif _util.GetConversationCount() == 3 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop2", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_3)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_3A, _const.CHANGE_DIALOG, -1, 4)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_3B, _const.CHANGE_DIALOG, -1, 5)
+  elseif _util.GetConversationCount() == 4 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_4A)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_4, _const.CHANGE_DIALOG, -1, 6)
+  elseif _util.GetConversationCount() == 5 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_4B)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_4, _const.CHANGE_DIALOG, -1, 6)
+  elseif _util.GetConversationCount() == 6 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShopChair", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_5)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_5A, _const.CHANGE_DIALOG, -1, 7)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_5B, _const.CHANGE_DIALOG, -1, 8)
+  elseif _util.GetConversationCount() == 7 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_6A)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_6A, _const.CHANGE_DIALOG, -1, 9)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_6B, _const.CHANGE_DIALOG, -1, 9)
+  elseif _util.GetConversationCount() == 8 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_6B)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_6A, _const.CHANGE_DIALOG, -1, 9)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_6B, _const.CHANGE_DIALOG, -1, 9)
+  elseif _util.GetConversationCount() == 9 then
+    _util.SetVar("GrabRookieCornClues", 1)
+    _util.AddNPCText(_text.M11_PH_GIFTSHOP_ROOKIE_END, _const.CHANGE_DIALOG, -1, 10)
+  elseif _util.GetConversationCount() == 10 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShopPopcorn", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_7, _const.END_DIALOG, -1, 10)
+  elseif _util.GetConversationCount() == 11 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop", _id.M11_RookieGiftShop)
+    _util.SetVar("TalkedWithRookie", 1)
+    _util.AddNPCText(_text.M11_GS_ROOKIE_9)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_9A, _const.CHANGE_DIALOG, -1, 12)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_9B, _const.CHANGE_DIALOG, -1, 13)
+  elseif _util.GetConversationCount() == 12 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_10A, _const.CHANGE_DIALOG, -1, 17)
+  elseif _util.GetConversationCount() == 13 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_10B, _const.CHANGE_DIALOG, -1, 17)
+  elseif _util.GetConversationCount() == 14 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_12)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_12, _const.CHANGE_DIALOG, -1, 15)
+  elseif _util.GetConversationCount() == 15 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop", _id.M11_RookieGiftShop)
+    _util.ActivateNpc(_util.GetSelf(), 101)
+  elseif _util.GetConversationCount() == 101 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_13)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_13, _const.CHANGE_DIALOG, -1, 16)
+  elseif _util.GetConversationCount() == 16 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_14)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIE_A_14, _const.END_DIALOG, -1, 16)
+  elseif _util.GetConversationCount() == 17 then
+    _util.AddNPCText(_text.M11_GS_ROOKIE_11, _const.END_DIALOG, -1, 14)
+  elseif _util.GetConversationCount() == 50 then
+    _util.ChangeBaseAnim("NPC/M11/Rookie/RookieGiftShop2", _id.M11_RookieGiftShop)
+    _util.AddNPCText(_text.M11_GS_ROOKIECLUE1)
+    _util.AddPlayerOption(_text.M11_GS_ROOKIECLUE1A, _const.CHANGE_DIALOG, -1, 51)
+  elseif _util.GetConversationCount() == 51 then
+    _util.AddNPCText(_text.M11_GS_ROOKIECLUE2, _const.CHANGE_DIALOG, -1, 11)
+  end
+end
+if _util.GetReason() == _const.AFTER_DIALOG and _util.GetVar("TalkedWithJPG") == 1 and _util.GetVar("TalkedWithRookie") == 1 and _util.GetVar("M11_ComHQ") == 0 then
+  _util.SetupComNpc(_const.COM_STATIC, _id.M11_HQGaryScreen, 0)
+  _util.SetVar("M11_ComHQ", 1)
+  _util.AddObjective(_text.M11_OBJ2)
+  _util.DisableSpyPodFunc(_const.FLAG_HEADQUARTERS)
+  _util.AddItem(_id.M11_VillageStatic)
+  _util.SetSpawn(1, _id.M11_VillageScreen)
+  _util.SetSpawn(1, _id.M11_VillageStatic)
+  _util.AddItem(_id.M11_VillageNPCP1, 2)
+  _util.AddItem(_id.M11_VillageNPCP2, 2)
+  _util.AddItem(_id.M11_VillageNPCBrownP, 2)
+  _util.SetSpawn(1, _id.M11_Marbles1)
+  _util.SetSpawn(1, _id.M11_Marbles2)
+  _util.SetSpawn(1, _id.M11_MarblesGround)
+  _util.SetSpawn(1, _id.M11_CornGround)
+  _util.SetSpawn(1, _id.M11_VillageDVDPlayer)
+  _util.LaunchCommunicator()
+end

@@ -1,0 +1,11 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.DROPPED then
+  _util.AddInventoryItem(_id.C2_Camera)
+  _util.DelItem(_util.GetSelf())
+end
+if _util.GetReason() == _const.ITEM_DROPPED and _util.GetSource() == _id.C2_Camera then
+  _util.ChangeBaseAnim("NPC/MysteriousTremors/Klutzy/KlutzyBRWrench", _id.M8_KlutzyBR)
+  _util.ChangeBaseAnim("NPC/MysteriousTremors/Klutzy/KlutzyBRWrench", _id.M8_KlutzyBR)
+  _util.ActivateNpc(_id.C2_CR_Director, 3)
+end

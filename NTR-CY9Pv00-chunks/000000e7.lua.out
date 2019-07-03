@@ -1,0 +1,63 @@
+local L0_0, L1_1, L2_2, L3_3, L4_4, L5_5
+L0_0 = _util
+L0_0 = L0_0.GetActiveMission
+L0_0 = L0_0()
+L1_1 = _util
+L1_1 = L1_1.GetActiveChapter
+L1_1 = L1_1()
+L2_2 = 33723
+L3_3 = 52
+L4_4 = _util
+L4_4 = L4_4.GetReason
+L4_4 = L4_4()
+L5_5 = _const
+L5_5 = L5_5.CREATED
+if L4_4 == L5_5 then
+  L4_4 = _util
+  L4_4 = L4_4.AddInterest
+  L5_5 = _const
+  L5_5 = L5_5.ITEM_DROPPED
+  L4_4(L5_5)
+end
+L4_4 = _util
+L4_4 = L4_4.GetReason
+L4_4 = L4_4()
+L5_5 = _const
+L5_5 = L5_5.TOUCHED
+if L4_4 == L5_5 then
+  L4_4 = _util
+  L4_4 = L4_4.AddMonologue
+  L5_5 = _text
+  L5_5 = L5_5.M8_TOWN_PUFFLE_TOUCH2
+  L4_4(L5_5, "DialogStrings", _const.END_DIALOG, 0)
+end
+L4_4 = _util
+L4_4 = L4_4.GetReason
+L4_4 = L4_4()
+L5_5 = _const
+L5_5 = L5_5.ITEM_DROPPED
+if L4_4 == L5_5 then
+  L4_4 = _util
+  L4_4 = L4_4.GetSource
+  L4_4 = L4_4()
+  L5_5 = _id
+  L5_5 = L5_5.Inventory_Cookie
+  if L4_4 == L5_5 then
+    function L5_5()
+      _util.DisableInput()
+      _util.SwitchState("2Cookie", _util.GetSelf())
+      repeat
+        scriptWait()
+      until not _util.IsAnimPlaying(_util.GetSelf())
+      _util.SetPuffle(_id.Inventory_PuffleGreen)
+      if itemId == 272 then
+        _util.DelItem(41751)
+      elseif itemId == 41751 then
+        _util.DelItem(272)
+      end
+      _util.EnableInput()
+      _util.DelItem(_util.GetSelf())
+    end
+    scriptPlay(L5_5)
+  end
+end

@@ -1,0 +1,25 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetConversationCount() == 0 then
+    _util.AddLoopingConv(1790)
+    _util.AddLoopingOption(1791, 1793, _const.CHANGE_DIALOG, 1)
+    _util.AddLoopingOption(1792, 1794, _const.CHANGE_DIALOG, 101)
+  elseif _util.GetConversationCount() == 1 then
+    _util.AddConversation(1793, 1796, -1, _const.CHANGE_DIALOG, 2)
+  elseif _util.GetConversationCount() == 2 then
+    _util.AddConversation(1797, 1792, -1, _const.CHANGE_DIALOG, 101)
+  elseif _util.GetConversationCount() == 101 then
+    _util.AddDialog(1794, _const.CHANGE_DIALOG, 102)
+  elseif _util.GetConversationCount() == 102 then
+    _util.AddLoopingConv(1795)
+    _util.AddLoopingOption(1798, -1, _const.CHANGE_DIALOG, 103)
+    _util.AddLoopingOption(1799, -1, _const.CHANGE_DIALOG, 104)
+  elseif _util.GetConversationCount() == 104 then
+    _util.AddDialog(4468, _const.END_DIALOG, 0)
+  elseif _util.GetConversationCount() == 103 then
+    _util.SetVar("FPMission_Started", 0)
+    _util.SetVar("FP_ITEM_SETUP", 0)
+    _util.StartMission(33)
+  end
+end

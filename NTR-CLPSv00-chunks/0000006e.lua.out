@@ -1,0 +1,14 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetConversationCount() == 0 then
+    _util.AddMonologue(4309, "DialogStrings", _const.CHANGE_DIALOG, 2)
+  elseif _util.GetConversationCount() == 2 then
+    _util.PushCamera()
+    _util.AddDialogButton(4310, _const.CHANGE_DIALOG, 1)
+    _util.AddDialogButton(4311, _const.END_DIALOG, 0)
+  elseif _util.GetConversationCount() == 1 then
+    _util.SetConversationCount(0)
+    _util.StartMiniGame(_const.JETPACK, 3)
+  end
+end

@@ -1,0 +1,14 @@
+if _util.GetVar("ReelInJPG") == 0 then
+  _util.ActivateNpc(_id.C3_TM_JPGonRocket, 0)
+end
+if _util.GetVar("UsePuffle") == 0 and _util.GetVar("UseScissors") == 0 then
+  _util.ChangeBaseAnim("NPC/M3/JPG/jpgNoControl", _id.C3_TM_JPGonRocket)
+elseif _util.GetVar("UseScissors") == 0 then
+  _util.ChangeBaseAnim("NPC/M3/JPG/jpgUnderControl", _id.C3_TM_JPGonRocket)
+  _util.ChangeBaseAnim("NPC/M3/JPG/FishRodUnderControl", _id.C3_MountainTop_FishPole)
+elseif _util.GetVar("UseScissors") == 2 then
+  _util.ChangeBaseAnim("NPC/M3/JPG/jpgFree", _id.C3_TM_JPG)
+  _util.ChangeBaseAnim("NPC/M3/JPG/FishRodFree", _id.C3_MountainTop_FishPole)
+else
+  _util.ChangeBaseAnim("NPC/M3/JPG/FishRodFree", _id.C3_MountainTop_FishPole)
+end

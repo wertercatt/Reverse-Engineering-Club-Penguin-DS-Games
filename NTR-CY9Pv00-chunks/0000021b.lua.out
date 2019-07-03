@@ -1,0 +1,43 @@
+if _util.GetReason() == _const.CREATED then
+  _util.AddInterest(_const.AFTER_DIALOG)
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetVar("C1_TC7_idleHook_jpg") == 1 then
+    _util.SetVar("C1_TC7_idleHook_jpg", 0)
+  end
+  if _util.GetVar("C1_TC7_requestItemHook_jpg") == 1 then
+    _util.SetVar("C1_TC7_requestItemHook_jpg", 0)
+  end
+  if _util.GetVar("C1_TC7_doneHook_jpg") == 1 then
+    _util.SetVar("C1_TC7_doneHook_jpg", 0)
+  end
+  if 10 == 0 then
+    _util.AddNPCText(_text.C1_TC4_JPG_1, _const.CHANGE_NPC, _id.M1_T7_Dot, 0)
+  elseif 10 == 1 then
+    _util.AddNPCText(_text.C1_TC4_JPG_3, _const.CHANGE_NPC, _id.M1_T7_Rookie, 2)
+  elseif 10 == 2 then
+    _util.AddNPCText(_text.C1_TC4_JPG_10)
+    _util.AddPlayerOption(_text.C1_TC4_A_10A, _const.END_DIALOG, -1, 2)
+    _util.AddPlayerOption(_text.C1_TC4_A_10B, _const.CHANGE_DIALOG, -1, 6)
+  elseif 10 == 6 then
+    _util.AddNPCText(_text.C1_TC4_JPG_11, _const.END_DIALOG, -1, 6)
+    _util.IncVar("C1_HaveAllItemsForBars")
+    if _util.GetVar("C1_HaveAllItemsForBars") >= 3 then
+      _util.MarkSubObjComplete(_text.C1_OBJ7, _text.C1_7SUBOBJ1)
+      _util.AddSubObjective(_text.C1_OBJ7, _text.C1_7SUBOBJ2)
+      _util.AddSubObjective(_text.C1_OBJ7, _text.C1_7SUBOBJ3)
+    end
+  elseif 10 == 8 then
+    _util.AddNPCText(_text.C1_TC4_DUMMY_C, _const.END_DIALOG, -1, 8)
+  elseif 10 == 9 then
+    _util.AddNPCText(_text.C1_TC4_JPG_12, _const.CHANGE_NPC, _id.M1_T7_Dot, 9)
+  elseif 10 == 10 then
+    _util.AddNPCText(_text.C1_TC4_DUMMY_C2, _const.END_DIALOG, -1, 10)
+  end
+end
+if _util.GetReason() == _const.AFTER_DIALOG and 10 == 6 then
+  _util.SetVar("C1_GaveJetPack", 1)
+  _util.SetConversationCount(8)
+  _util.AddInventoryItem(_id.C1_InventoryItem_JetPack)
+  _util.ChangeBaseAnim("NPC/M1/JetPackGuy/jpgCaveNoPac", _id.M1_T7_JPG)
+end

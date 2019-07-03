@@ -1,0 +1,272 @@
+local L0_0, L1_1
+L0_0 = _util
+L0_0 = L0_0.GetReason
+L0_0 = L0_0()
+L1_1 = _const
+L1_1 = L1_1.CREATED
+if L0_0 == L1_1 then
+  L0_0 = _util
+  L0_0 = L0_0.AddInterest
+  L1_1 = _const
+  L1_1 = L1_1.ITEM_DROPPED
+  L0_0(L1_1)
+end
+L0_0 = _util
+L0_0 = L0_0.GetReason
+L0_0 = L0_0()
+L1_1 = _const
+L1_1 = L1_1.TOUCHED
+if L0_0 == L1_1 then
+  L0_0 = _util
+  L0_0 = L0_0.GetConversationCount
+  L0_0 = L0_0()
+  if L0_0 == 0 then
+    L1_1 = _util
+    L1_1 = L1_1.GetVar
+    L1_1 = L1_1("FPMission_Started")
+    if L1_1 ~= 0 then
+      L1_1 = _util
+      L1_1 = L1_1.AddDialog
+      L1_1(4066, _const.END_DIALOG, 0)
+    end
+  elseif L0_0 == 0 then
+    L1_1 = _util
+    L1_1 = L1_1.AddConversation
+    L1_1(4067, 4068, -1, _const.CHANGE_DIALOG, 1)
+  elseif L0_0 == 1 then
+    L1_1 = _util
+    L1_1 = L1_1.AddLoopingConv
+    L1_1(4069)
+    L1_1 = _util
+    L1_1 = L1_1.AddLoopingOption
+    L1_1(4070, -1, _const.CHANGE_DIALOG, 300)
+    L1_1 = _util
+    L1_1 = L1_1.AddLoopingOption
+    L1_1(4071, -1, _const.CHANGE_DIALOG, 2)
+  elseif L0_0 == 2 then
+    L1_1 = _util
+    L1_1 = L1_1.AddDialog
+    L1_1(4072, _const.END_DIALOG, 0)
+  elseif L0_0 == 300 then
+    function L1_1()
+      _util.SetVar("FPMission_Started", 12)
+      _util.SetVar("FPM12_FlowersGiven", 0)
+      _util.SetVar("flowersInv", 0)
+      _util.SetVar("plazaFlower", 0)
+      _util.AddItem(_id.FPM12_BGFlowerLow)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerMid)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerHigh)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerLowa)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerLowb)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerLowc)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerLowd)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerLowe)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerMida)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerMidb)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerMidc)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerMidd)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerHigha)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerHighb)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerHighc)
+      _util.SetSpawn(1, _id.FPM12_BGFlowerHighd)
+      _util.ActivateNpc(_util.GetSelf(), 3)
+    end
+    scriptPlay(L1_1)
+  elseif L0_0 == 3 then
+    L1_1 = _util
+    L1_1 = L1_1.AddDialog
+    L1_1(4075, _const.CHANGE_DIALOG, 4)
+  elseif L0_0 == 4 then
+    L1_1 = _util
+    L1_1 = L1_1.AddConversation
+    L1_1(4076, 4077, -1, _const.CHANGE_DIALOG, 5)
+  elseif L0_0 == 5 then
+    L1_1 = _util
+    L1_1 = L1_1.AddDialog
+    L1_1(4078, _const.END_DIALOG, 6)
+  elseif L0_0 == 6 then
+    L1_1 = _util
+    L1_1 = L1_1.AddLoopingConv
+    L1_1(4079)
+    L1_1 = _util
+    L1_1 = L1_1.AddLoopingOption
+    L1_1(4080, -1, _const.CHANGE_DIALOG, 7)
+    L1_1 = _util
+    L1_1 = L1_1.AddLoopingOption
+    L1_1(4081, -1, _const.CHANGE_DIALOG, 8)
+  elseif L0_0 == 7 then
+    L1_1 = _util
+    L1_1 = L1_1.AddDialog
+    L1_1(4082, _const.END_DIALOG, 6)
+  elseif L0_0 == 8 then
+    L1_1 = _util
+    L1_1 = L1_1.AddDialog
+    L1_1(4083, _const.CHANGE_DIALOG, 50)
+  elseif L0_0 == 20 then
+    L1_1 = _util
+    L1_1 = L1_1.AddConversation
+    L1_1(4087, 4088, -1, _const.CHANGE_DIALOG, 21)
+  elseif L0_0 == 21 then
+    L1_1 = _util
+    L1_1 = L1_1.AddDialog
+    L1_1(4089, _const.CHANGE_DIALOG, 50)
+  elseif L0_0 == 50 then
+    function L1_1()
+      _util.SetVar("SNM01_missionComplete", 1)
+      _util.SetVar("FPMission_Started", 0)
+      if _util.GetVar("plazaFlower") == 0 then
+        _util.DelItem(_id.FPM12_BGFlowerLow)
+      end
+      _util.SetSpawn(0, _id.FPM12_BGFlowerMid)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerHigh)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerLowa)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerLowb)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerLowc)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerLowd)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerLowe)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerMida)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerMidb)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerMidc)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerMidd)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerHigha)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerHighb)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerHighc)
+      _util.SetSpawn(0, _id.FPM12_BGFlowerHighd)
+      _util.SetConversationCount(0)
+      _util.ClearInventory()
+      _util.PopCamera()
+    end
+    scriptPlay(L1_1)
+  end
+end
+L0_0 = _util
+L0_0 = L0_0.GetReason
+L0_0 = L0_0()
+L1_1 = _const
+L1_1 = L1_1.ITEM_DROPPED
+if L0_0 == L1_1 then
+  L0_0 = _util
+  L0_0 = L0_0.GetSource
+  L0_0 = L0_0()
+  L1_1 = _id
+  L1_1 = L1_1.FPM12_FlowerLow
+  if L0_0 ~= L1_1 then
+    L1_1 = _id
+    L1_1 = L1_1.FPM12_FlowerLowa
+    if L0_0 ~= L1_1 then
+      L1_1 = _id
+      L1_1 = L1_1.FPM12_FlowerLowb
+      if L0_0 ~= L1_1 then
+        L1_1 = _id
+        L1_1 = L1_1.FPM12_FlowerLowc
+        if L0_0 ~= L1_1 then
+          L1_1 = _id
+          L1_1 = L1_1.FPM12_FlowerLowd
+          if L0_0 ~= L1_1 then
+            L1_1 = _id
+            L1_1 = L1_1.FPM12_FlowerLowe
+          end
+        end
+      end
+    end
+  else
+    if L0_0 == L1_1 then
+      function L1_1()
+        _util.DisplayPopUp(488, "UI/Smilie", false)
+        repeat
+          scriptWait()
+        until _util.IsPopUpVisible() == false
+        _util.AddSmileys(3, _util.GetX(_util.GetSelf()), _util.GetY(_util.GetSelf()))
+        _util.IncVar("FPM12_FlowersGiven")
+        _util.DecVar("flowersInv")
+        _util.RemoveInventoryItem(_UPVALUE0_)
+        if _util.GetVar("FPM12_FlowersGiven") >= 16 then
+          _util.AddDialog(4084, _const.CHANGE_DIALOG, 20)
+          _util.AddCoins(2)
+        else
+          _util.AddDialog(4084, _const.END_DIALOG, 6)
+          _util.AddCoins(2)
+        end
+      end
+      scriptPlay(L1_1)
+  end
+  else
+    L1_1 = _id
+    L1_1 = L1_1.FPM12_FlowerMid
+    if L0_0 ~= L1_1 then
+      L1_1 = _id
+      L1_1 = L1_1.FPM12_FlowerMida
+      if L0_0 ~= L1_1 then
+        L1_1 = _id
+        L1_1 = L1_1.FPM12_FlowerMidb
+        if L0_0 ~= L1_1 then
+          L1_1 = _id
+          L1_1 = L1_1.FPM12_FlowerMidc
+          if L0_0 ~= L1_1 then
+            L1_1 = _id
+            L1_1 = L1_1.FPM12_FlowerMidd
+          end
+        end
+      end
+    else
+      if L0_0 == L1_1 then
+        function L1_1()
+          _util.DisplayPopUp(488, "UI/Smilie", false)
+          repeat
+            scriptWait()
+          until _util.IsPopUpVisible() == false
+          _util.AddSmileys(5, _util.GetX(_util.GetSelf()), _util.GetY(_util.GetSelf()))
+          _util.IncVar("FPM12_FlowersGiven")
+          _util.DecVar("flowersInv")
+          _util.RemoveInventoryItem(_UPVALUE0_)
+          if _util.GetVar("FPM12_FlowersGiven") >= 16 then
+            _util.AddDialog(4085, _const.CHANGE_DIALOG, 20)
+            _util.AddCoins(4)
+          else
+            _util.AddDialog(4085, _const.END_DIALOG, 6)
+            _util.AddCoins(4)
+          end
+        end
+        scriptPlay(L1_1)
+    end
+    else
+      L1_1 = _id
+      L1_1 = L1_1.FPM12_FlowerHigh
+      if L0_0 ~= L1_1 then
+        L1_1 = _id
+        L1_1 = L1_1.FPM12_FlowerHigha
+        if L0_0 ~= L1_1 then
+          L1_1 = _id
+          L1_1 = L1_1.FPM12_FlowerHighb
+          if L0_0 ~= L1_1 then
+            L1_1 = _id
+            L1_1 = L1_1.FPM12_FlowerHighc
+            if L0_0 ~= L1_1 then
+              L1_1 = _id
+              L1_1 = L1_1.FPM12_FlowerHighd
+            end
+          end
+        end
+      elseif L0_0 == L1_1 then
+        function L1_1()
+          _util.DisplayPopUp(488, "UI/Smilie", false)
+          repeat
+            scriptWait()
+          until _util.IsPopUpVisible() == false
+          _util.AddSmileys(8, _util.GetX(_util.GetSelf()), _util.GetY(_util.GetSelf()))
+          _util.IncVar("FPM12_FlowersGiven")
+          _util.DecVar("flowersInv")
+          _util.RemoveInventoryItem(_UPVALUE0_)
+          if _util.GetVar("FPM12_FlowersGiven") >= 16 then
+            _util.AddDialog(4086, _const.CHANGE_DIALOG, 20)
+            _util.AddCoins(6)
+          else
+            _util.AddDialog(4086, _const.END_DIALOG, 6)
+            _util.AddCoins(6)
+          end
+        end
+        scriptPlay(L1_1)
+      end
+    end
+  end
+end

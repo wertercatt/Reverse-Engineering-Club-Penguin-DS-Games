@@ -1,0 +1,29 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetVar("robostatus") > 2 then
+    if _util.GetConversationCount() == 0 then
+      _util.AddConversation(3143, 3145, -1, _const.CHANGE_DIALOG, 100)
+    elseif _util.GetConversationCount() == 100 then
+      _util.AddDialog(3146, _const.END_DIALOG, 2)
+    elseif _util.GetConversationCount() == 2 then
+      _util.AddConversation(3148, 3150, -1, _const.CHANGE_DIALOG, 3)
+    elseif _util.GetConversationCount() == 3 then
+      _util.AddDialog(3151, _const.END_DIALOG, 2)
+    end
+  end
+  if _util.GetVar("robostatus") < 3 then
+    if _util.GetConversationCount() == 0 then
+      _util.PlaySFX(171)
+      _util.AddLoopingConv(3136)
+      _util.AddLoopingOption(3138, 3141, _const.UPDATE_LOOP)
+      _util.AddLoopingOption(3139, 3142, _const.UPDATE_LOOP)
+      _util.AddLoopingOption(3140, -1, _const.END_DIALOG, 0)
+    elseif _util.GetConversationCount() == 10 then
+      _util.AddDialog(3123, _const.CHANGE_NPC, _id.M5C1_Gary_SkiVillage, 11)
+      _util.PlaySFX(171)
+    elseif _util.GetConversationCount() == 11 then
+      _util.AddDialog(3125, _const.END_DIALOG, 0)
+    end
+  end
+end

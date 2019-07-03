@@ -1,0 +1,7 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.TOUCHED and _util.GetVar("c2_confrontedHerbert") ~= 0 then
+  _util.ClearCom()
+  _util.SetupComNpc(_const.COM_JPG, _id.C2_Wilderness_JPG, 3)
+  _util.LaunchCommunicator()
+end

@@ -1,0 +1,47 @@
+if _util.GetReason() == _const.CREATED then
+  _util.AddInterest(_const.AFTER_DIALOG)
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetVar("C1_TC7_idleHook_rookie") == 1 then
+    _util.SetVar("C1_TC7_idleHook_rookie", 0)
+  end
+  if _util.GetVar("C1_TC7_requestItemHook_rookie") == 1 then
+    _util.SetVar("C1_TC7_requestItemHook_rookie", 0)
+  end
+  if _util.GetVar("C1_TC7_doneHook_rookie") == 1 then
+    _util.SetVar("C1_TC7_doneHook_rookie", 0)
+  end
+  if 12 == 0 then
+    _util.AddNPCText(_text.C1_TC4_ROOKIE_1)
+    _util.AddPlayerOption(_text.C1_TC4_A_1A, _const.CHANGE_NPC, _id.M1_T7_Dot, 1)
+    _util.AddPlayerOption(_text.C1_TC4_A_1B, _const.CHANGE_NPC, _id.M1_T7_Dot, 1)
+  elseif 12 == 1 then
+    _util.AddNPCText(_text.C1_TC4_ROOKIE_2, _const.CHANGE_NPC, _id.M1_T7_Dot, 2)
+  elseif 12 == 2 then
+    _util.AddNPCText(_text.C1_TC4_ROOKIE_3, _const.CHANGE_NPC, _id.M1_T7_Dot, 3)
+  elseif 12 == 3 then
+    _util.AddNPCText(_text.C1_TC4_ROOKIE_8)
+    _util.AddPlayerOption(_text.C1_TC4_A_8A, _const.END_DIALOG, -1, 3)
+    _util.AddPlayerOption(_text.C1_TC4_A_8B, _const.CHANGE_DIALOG, -1, 6)
+  elseif 12 == 6 then
+    _util.AddNPCText(_text.C1_TC4_ROOKIE_9, _const.END_DIALOG, -1, 6)
+    _util.SetVar("RookieFlyUpCliff", 2)
+    _util.ChangeBaseAnim("NPC/M1/Rookie/RookieUpCliff")
+    _util.IncVar("C1_HaveAllItemsForBars")
+    if 3 <= _util.GetVar("C1_HaveAllItemsForBars") then
+      _util.MarkSubObjComplete(_text.C1_OBJ7, _text.C1_7SUBOBJ1)
+      _util.AddSubObjective(_text.C1_OBJ7, _text.C1_7SUBOBJ2)
+      _util.AddSubObjective(_text.C1_OBJ7, _text.C1_7SUBOBJ3)
+    end
+  elseif 12 == 8 then
+    _util.AddNPCText(_text.C1_TC4_ROOKIE_11, _const.CHANGE_NPC, _id.M1_T7_Dot, 8)
+  elseif 12 == 11 then
+    _util.AddNPCText(_text.C1_TC4_DUMMY_A, _const.END_DIALOG, -1, 11)
+  elseif 12 == 12 then
+    _util.AddNPCText(_text.C1_TC4_DUMMY_A2, _const.END_DIALOG, -1, 12)
+  end
+end
+if _util.GetReason() == _const.AFTER_DIALOG and 12 == 6 then
+  _util.SetConversationCount(11)
+  _util.AddInventoryItem(_id.C1_InventoryItem_FishOnStick)
+end

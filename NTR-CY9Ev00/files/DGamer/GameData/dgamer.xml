@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- DGamer DS dynamic configuration, for Club Penguin DS -->
+<dgamer gamename="EPF: Herbert's Revenge" cmsid="206620" gamecode="CY9E" ggid="0x00400583" platform="DGamerDS" version="2008.12.18.15.40.18" embededSRL="true">
+  <!-- spec version 1.46 -->
+  <bootInformation englishOnly="true" displayESRB="false"/>
+  <nvram cardbackuptype="CARD_BACKUP_TYPE_EEPROM_64KBITS" startAddr="6112"/>
+  <config LoadFromRom="false" configFile="dsconfig.xml" configURL="https://home.disney.go.com/dgamer/dynamic/config?id=904839"/>
+  <whitelist replacementWord="..." replacementPhrase="... ... ..." supplementalfile=""/>
+  <skins file=""/>
+  <avatarbatabase file=""/>
+  <returntohostimage file=""/>
+
+  <honors>
+    <honor imagefile="EPF2_HONR" id="904810" gameid="0" animIndex="1" name="Mystery Begins" description="You found the first clue!" />
+    <honor imagefile="EPF2_HONR" id="904811" gameid="1" animIndex="2" name="Found the Culprit" description="You discovered the culprit!" />
+    <honor imagefile="EPF2_HONR" id="904812" gameid="2" animIndex="3" name="Shaky Plan" description="You foiled Herbert&apos;s Plan!" />
+    <honor imagefile="EPF2_HONR" id="904813" gameid="3" animIndex="4" name="Track and Snow" description="You saved Club Penguin!" />
+    <honor imagefile="EPF2_HONR" id="904814" gameid="4" animIndex="5" name="Master Agent" description="You tracked down Herbert!" />
+    <honor imagefile="EPF2_HONR" id="904815" gameid="5" animIndex="6" name="The Last Mission" description="The last PSA mission was a success!" />
+    <honor imagefile="EPF2_HONR" id="904816" gameid="6" animIndex="7" name="Team Leader" description="You used your wits to lead the agents!" />
+    <honor imagefile="EPF2_HONR" id="904817" gameid="7" animIndex="8" name="Master of Disguise" description="You tricked Herbert with your disguise!" />
+    <honor imagefile="EPF2_HONR" id="904818" gameid="8" animIndex="9" name="Rescuer" description="You rescued your entire team!" />
+    <honor imagefile="EPF2_HONR" id="904819" gameid="9" animIndex="10" name="Club Penguin Saver" description="You saved Club Penguin from sinking!" />
+    <honor imagefile="EPF2_HONR" id="904820" gameid="10" animIndex="11" name="EPF Super Agent" description="You did everything in the game!" />
+    <honor imagefile="EPF2_HONR" id="904809" gameid="11" animIndex="0" name="Registered DGamer" description="You&apos;ve successfully logged into DGamer!"/>
+  </honors>
+
+  <unlockables>
+    <!-- Default items are like game unlockables, but backend only, so category DGamer.  I'm carving out
+         slots for them in the DGamer_Data array to avoid confusion, but they don't actually need them.  -->
+    <!-- <unlockable category="DGamer" id="161460" dgamerid="46848" /> --> <!--  Club Penguin T-shirt -->
+    <!-- <unlockable category="DGamer" id="161465" dgamerid="46849" /> --> <!--  Spy Costume -->
+    <!-- <unlockable category="DGamer" id="161466" dgamerid="46851" /> --> <!--  Club Penguin Puffle T-shirt -->
+
+    <!--  Game specific unlockables  -->
+    <unlockable id="904822" gameid="0" dgamerid="50688" giftable="True" name="Black Puffle Hoodie" category="Game" /> 
+    <unlockable id="904823" gameid="1" dgamerid="50689" giftable="True" name="Purple Puffle Hoodie" category="Game" /> 
+    <unlockable id="904824" gameid="2" dgamerid="50690" giftable="True" name="EPF 2 Hat" category="Game" /> 
+    <unlockable id="904825" gameid="3" dgamerid="50691" giftable="True" name="Rock Hopper Tee" category="Game" /> 
+    <unlockable id="904826" gameid="4" dgamerid="50692" giftable="True" name="Igloo Hat" category="Game" /> 
+    <unlockable id="904827" gameid="5" dgamerid="50693" giftable="True" name="Black Puffle Plushie" category="Game" /> 
+    <unlockable id="904828" gameid="6" dgamerid="50694" giftable="True" name="White Puffle Plushie" category="Game" /> 
+    <unlockable id="904829" gameid="7" dgamerid="50695" giftable="True" name="EPF Watch" category="Game" /> 
+    <unlockable id="904830" gameid="8" dgamerid="50696" giftable="True" name="EPF 2 Tee" category="Game" /> 
+    <unlockable id="904831" gameid="9" dgamerid="50697" giftable="True" name="EPF 2 Hoodie" category="Game" /> 
+    <unlockable id="904832" gameid="10" dgamerid="50698" giftable="True" name="Penguin Feet" category="Game" /> 
+    <unlockable id="904833" gameid="11" dgamerid="50699" giftable="True" name="Herbert Hat" category="Game" /> 
+    <unlockable id="904834" gameid="12" dgamerid="50700" giftable="True" name="Klutsy Hat" category="Game" /> 
+    <unlockable id="904837" gameid="13" dgamerid="50701" giftable="True" name="Penguin Hat" category="Game" /> 
+    <unlockable id="904838" gameid="14" dgamerid="50702" giftable="True" name="Herbert Shirt" category="Game" /> 
+
+    <!--  DGamer specific unlockables, note that these shouldn't be fired if id (e.g. 117358) already exists in the backpack -->
+    <unlockable category="StarterSet" starterSetID="0" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetA0 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="0" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetA1 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="0" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetA2 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="0" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetA3 0 0 0 dgamer"/>
+
+    <unlockable category="StarterSet" starterSetID="1" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetB0 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="1" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetB1 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="1" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetB2 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="1" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetB3 0 0 0 dgamer"/>
+
+    <unlockable category="StarterSet" starterSetID="2" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetC0 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="2" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetC1 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="2" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetC2 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="2" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetC3 0 0 0 dgamer"/>
+
+    <unlockable category="StarterSet" starterSetID="3" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetD0 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="3" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetD1 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="3" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetD2 0 0 0 dgamer"/>
+    <unlockable category="StarterSet" starterSetID="3" id="117358" eventid="116060" source="GAME" type="dgamer_dgamer_registerSetD3 0 0 0 dgamer"/>
+
+    <!-- DGamer unlockables via the starter set events above -->
+    <unlockable category="DGamer" id="117352" dgamerid="135"/>  <!-- Leather Jacket Starterset1A -->
+    <unlockable category="DGamer" id="117356" dgamerid="29696"/>  <!-- Asian Skirt Starterset1B -->
+    <unlockable category="DGamer" id="117354" dgamerid="44110"/>  <!-- Cowboy Hat Starterset1C -->
+
+    <unlockable category="DGamer" id="117355" dgamerid="29768"/>  <!-- Camo Pants Starterset2A -->
+    <unlockable category="DGamer" id="117381" dgamerid="13"/>  <!-- Wrap Sweater with blue diagonal stripe shirt Starterset2B -->
+    <unlockable category="DGamer" id="117382" dgamerid="44122"/>  <!-- Painter Cap Starterset2C -->
+
+    <unlockable category="DGamer" id="117383" dgamerid="29769"/>  <!-- Cowboy Pants Starterset3A -->
+    <unlockable category="DGamer" id="117384" dgamerid="28"/>  <!-- Button-down shirt Starterset3B -->
+    <unlockable category="DGamer" id="117385" dgamerid="44097"/>  <!-- Baseball Cap Starterset3C -->
+
+    <unlockable category="DGamer" id="117386" dgamerid="29697"/>  <!-- Cool Guy Pants Starterset4A -->
+    <unlockable category="DGamer" id="117387" dgamerid="52"/>  <!-- Short Sleeve Tee with Long Sleeve tee under Starterset4B -->
+    <unlockable category="DGamer" id="117388" dgamerid="44183"/>  <!-- Rice Hat Starterset4C -->
+
+    <unlockable category="DGamer" id="117628" dgamerid="44171"/>  <!-- Looks like Dr. Seuss Hat -->
+    <unlockable category="DGamer" id="117389" dgamerid="44313"/>  <!-- Star Glasses -->
+    <unlockable category="DGamer" id="117629" dgamerid="44348"/>  <!-- Wii Mote -->
+    <unlockable category="DGamer" id="117630" dgamerid="44364"/>  <!-- Magic Wand -->
+    <unlockable category="DGamer" id="117631" dgamerid="44383"/>  <!-- Purse (purple) -->
+    <unlockable category="DGamer" id="117636" dgamerid="44036"/>  <!-- Colored Mickey Ears-->
+    <unlockable category="DGamer" id="117638" dgamerid="151"/>  <!-- Life Vest-->
+    <unlockable category="DGamer" id="117350" dgamerid="93"/>  <!-- Mickey Mouse costume -->
+    <unlockable category="DGamer" id="117351" dgamerid="90"/>  <!-- Minnie Mouse costume -->
+    <unlockable category="DGamer" id="117353" dgamerid="94"/>  <!-- Incredibles Costume -->
+  </unlockables>
+
+  <events>
+    <event id="206620" gameid="0" type="dgamer_EPF2_earnRegisteredDGamer 0 0 0 dgamer" name="earnRegisteredDGamer" source="GAME" autofire="true"/>
+    <event id="206620" gameid="1" type="dgamer_EPF2_unlockBlackPuffleHoodie 0 0 0 dgamer" name="unlockBlackPuffleHoodie" source="GAME"/>
+    <event id="206620" gameid="2" type="dgamer_EPF2_unlockPurplePuffleHoodie 0 0 0 dgamer" name="unlockPurplePuffleHoodie" source="GAME"/>
+    <event id="206620" gameid="3" type="dgamer_EPF2_unlockEPF2Hat 0 0 0 dgamer" name="unlockEPF2Hat" source="GAME"/>
+    <event id="206620" gameid="4" type="dgamer_EPF2_unlockRockHopperTee 0 0 0 dgamer" name="unlockRockHopperTee" source="GAME"/>
+    <event id="206620" gameid="5" type="dgamer_EPF2_unlockIglooHat 0 0 0 dgamer" name="unlockIglooHat" source="GAME"/>
+    <event id="206620" gameid="6" type="dgamer_EPF2_unlockBlackPufflePlushie 0 0 0 dgamer" name="unlockBlackPufflePlushie" source="GAME"/>
+    <event id="206620" gameid="7" type="dgamer_EPF2_unlockWhitePufflePlushie 0 0 0 dgamer" name="unlockWhitePufflePlushie" source="GAME"/>
+    <event id="206620" gameid="8" type="dgamer_EPF2_unlockEPFWatch 0 0 0 dgamer" name="unlockEPFWatch" source="GAME"/>
+    <event id="206620" gameid="9" type="dgamer_EPF2_unlockEPF2Tee 0 0 0 dgamer" name="unlockEPF2Tee" source="GAME"/>
+    <event id="206620" gameid="10" type="dgamer_EPF2_unlockEPF2Hoodie 0 0 0 dgamer" name="unlockEPF2Hoodie" source="GAME"/>
+    <event id="206620" gameid="11" type="dgamer_EPF2_unlockPenguinFeet 0 0 0 dgamer" name="unlockPenguinFeet" source="GAME"/>
+    <event id="206620" gameid="12" type="dgamer_EPF2_unlockHerbertHat 0 0 0 dgamer" name="unlockHerbertHat" source="GAME"/>
+    <event id="206620" gameid="13" type="dgamer_EPF2_unlockKlutsyHat 0 0 0 dgamer" name="unlockKlutsyHat" source="GAME"/>
+    <event id="206620" gameid="14" type="dgamer_EPF2_unlockPenguinHat 0 0 0 dgamer" name="unlockPenguinHat" source="GAME"/>
+    <event id="206620" gameid="15" type="dgamer_EPF2_unlockHerbertShirt 0 0 0 dgamer" name="unlockHerbertShirt" source="GAME"/>
+    <event id="206620" gameid="16" type="dgamer_EPF2_earnMysteryBegins 0 0 0 dgamer" name="earnMysteryBegins" source="GAME"/>
+    <event id="206620" gameid="17" type="dgamer_EPF2_earnFoundCulprit 0 0 0 dgamer" name="earnFoundCulprit" source="GAME"/>
+    <event id="206620" gameid="18" type="dgamer_EPF2_earnShakyPlan 0 0 0 dgamer" name="earnShakyPlan" source="GAME"/>
+    <event id="206620" gameid="19" type="dgamer_EPF2_earnTrackandSnow 0 0 0 dgamer" name="earnTrackandSnow" source="GAME"/>
+    <event id="206620" gameid="20" type="dgamer_EPF2_earnMasterAgent 0 0 0 dgamer" name="earnMasterAgent" source="GAME"/>
+    <event id="206620" gameid="21" type="dgamer_EPF2_earnTheLastMission 0 0 0 dgamer" name="earnTheLastMission" source="GAME"/>
+    <event id="206620" gameid="22" type="dgamer_EPF2_earnTeamLeader 0 0 0 dgamer" name="earnTeamLeader" source="GAME"/>
+    <event id="206620" gameid="23" type="dgamer_EPF2_earnMasterofDisguise 0 0 0 dgamer" name="earnMasterofDisguise" source="GAME"/>
+    <event id="206620" gameid="24" type="dgamer_EPF2_earnRescuer 0 0 0 dgamer" name="earnRescuer" source="GAME"/>
+    <event id="206620" gameid="25" type="dgamer_EPF2_earnClubPenguinSaver 0 0 0 dgamer" name="earnClubPenguinSaver" source="GAME"/>
+    <event id="206620" gameid="26" type="dgamer_EPF2_earnEPFSuperAgent 0 0 0 dgamer" name="earnEPFSuperAgent" source="GAME"/>
+  </events>
+
+  <stats>
+    <stat id="904840" gameid="0" genre="arc" name="Coins Collected" description="Number of coins picked up"/>
+    <stat id="904841" gameid="1" genre="arc" name="Grapple Score" description="High score in Grapple minigame"/>
+    <stat id="904842" gameid="2" genre="arc" name="AquaGrabber Score" description="High score in Aquagrabber minigame"/>
+    <stat id="904843" gameid="3" genre="arc" name="Labyrinth Score" description="High score in Labyrinth minigame"/>
+    <stat id="904844" gameid="4" genre="arc" name="Jackhammer Score" description="High score in Jackhammer minigame"/>
+    <stat id="904845" gameid="5" genre="arc" name="Percent Complete" description="Percent of the game completed"/>
+    <stat id="904846" gameid="6" genre="arc" name="Game Pieces Collected" description="Number of game pieces picked up"/>
+    <stat id="904847" gameid="7" genre="arc" name="Items Collected" description="How many items you have collected"/>
+  </stats>
+
+  <!-- Enter up to eight (8) Wireless (adhoc) chat stages/lobbies that will be listed to player -->
+  <!-- They will be listed on the client according to the order attribute (A-Z = top-bottom) -->
+  <stages>
+    <stage name="Bronze Room" order="A"/>
+    <stage name="Gold Room" order="B"/>
+    <stage name="Green Room" order="C"/>
+    <stage name="Orange Room" order="D"/>
+    <stage name="Pink Room" order="E"/>
+    <stage name="Purple Room" order="F"/>
+    <stage name="Silver Room" order="G"/>
+    <stage name="Yellow Room" order="H"/>
+  </stages>
+
+</dgamer>

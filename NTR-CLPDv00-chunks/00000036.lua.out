@@ -1,0 +1,17 @@
+if _util.GetReason() == _const.CREATED then
+end
+if _util.GetReason() == _const.TOUCHED then
+  if _util.GetConversationCount() == 0 then
+    _util.AddConversation(2939, 2940, -1, _const.CHANGE_DIALOG, 1)
+  elseif _util.GetConversationCount() == 1 then
+    _util.AddConversation(2941, 2942, -1, _const.CHANGE_DIALOG, 2)
+  elseif _util.GetConversationCount() == 2 then
+    _util.AddConversation(2943, 2944, -1, _const.CHANGE_DIALOG, 4)
+  elseif _util.GetConversationCount() == 4 then
+    _util.AddDialog(2945, _const.END_DIALOG, 3)
+  elseif _util.GetConversationCount() == 3 then
+    _util.AddLoopingConv(2952)
+    _util.AddLoopingOption(2954, 2956, _const.UPDATE_LOOP)
+    _util.AddLoopingOption(2955, -1, _const.END_DIALOG, 3)
+  end
+end
